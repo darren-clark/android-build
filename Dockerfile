@@ -4,6 +4,7 @@ workdir /source
 volume /source
 
 add build /usr/local/bin/build
+cmd [/usr/local/bin/build]
 
 run echo debconf debconf/frontend select Noninteractive | debconf-set-selections
 run echo APT::Install-Recommends \"0\"\; > /etc/apt/apt.conf.d/01norecommend
