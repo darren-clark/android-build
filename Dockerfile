@@ -3,9 +3,6 @@ from ubuntu:14.04
 workdir /source 
 volume /source
 
-add build /usr/local/bin/build
-cmd ["/usr/local/bin/build"]
-
 run echo debconf debconf/frontend select Noninteractive | debconf-set-selections
 run echo APT::Install-Recommends \"0\"\; > /etc/apt/apt.conf.d/01norecommend
 run dpkg --add-architecture i386
@@ -43,3 +40,7 @@ run apt-get update && \
     flex && \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk6-installer
+
+add build /usr/local/bin/build
+cmd ["/usr/local/bin/build"]
+
