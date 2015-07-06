@@ -13,7 +13,7 @@ Note: These images DO NOT pull the source code.
 
 Simple use case:
 
-`docker run --rm -ti -e ANDROID_BUILD_PRODUCT=android_x86-eng -e ANDROID_BUILD_JOBS=4 -e ANDROID_BUILD_UID=$(id -u) -v <path-to-source>:/source darrenclark/android-build:kitkat-x86`
+`docker run --rm -ti -e ANDROID_BUILD_PRODUCT=android_x86-eng -e ANDROID_BUILD_JOBS=4 -e ANDROID_BUILD_UID=$(id -u) -e ANDROID_BUILD_TARGET=iso_img -v <path-to-source>:/source darrenclark/android-build:kitkat-x86`
 
 That will build run `lunch android_x86-eng` then `m -j4 iso_img`, with output being in `<path-to-source>/out` on the host.
 It will also create user with the specified user id and execute the build as that user. If this is not provided, it will execute as root.
@@ -24,6 +24,6 @@ In addition to the Android build environment variables, the following are also u
 |-----------------------|-----------------------------------------------|--------------------|
 | ANDROID_BUILD_PRODUCT | Product to build(e.g. from the lunch menu)    | <none>             |
 | ANDROID_BUILD_JOBS    | Concurrent build jobs (e.g -j parameter to m) | 1                  |
-| ANDROID_BUILD_TARGET  | Target to make                                | iso_img            |
+| ANDROID_BUILD_TARGET  | Target to make                                | <none>             |
 | ANDROID_BUILD_UID     | UID for the build user                        | 0                  |
-| ANDROID_BUILD_GID     | GID for the build user                        | $ANDROID_BUILD_UID |
+| ANDROID_BUILD_GID     | GID for the build user                        | ANDROID_BUILD_UID |
