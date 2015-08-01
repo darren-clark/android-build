@@ -27,7 +27,8 @@ run apt-get update && \
     gperf \
     gettext \
     genisoimage \
-    syslinux && \
+    syslinux \
+    python-mako && \
   rm -rf /var/lib/apt/lists/*
 
 
