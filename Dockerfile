@@ -4,8 +4,7 @@ from darrenclark/android-build-base
 
 run apt-get update && \
   apt-get install -y \
-    openjdk-7-jdk \
-    curl && \
+    openjdk-7-jdk &&\
  rm -rf /var/lib/apt/lists/*
 
 add build /usr/local/bin/build
