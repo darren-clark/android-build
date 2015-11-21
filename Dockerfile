@@ -14,6 +14,7 @@ run dpkg --add-architecture i386
 run apt-get update && \
   apt-get install -y \
     build-essential \
+    curl \
     git \
     g++-multilib \
     zlib1g:i386 \ 
