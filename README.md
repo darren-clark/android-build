@@ -13,7 +13,7 @@ Note: These images DO NOT pull the source code.
 
 Simple use case:
 
-`docker run --rm -ti -e ANDROID_BUILD_PRODUCT=android_x86-eng -e ANDROID_BUILD_JOBS=4 -e ANDROID_BUILD_UID=$(id -u) -e ANDROID_BUILD_TARGET=iso_img -v <path-to-source>:/source darrenclark/android-build:kitkat-x86`
+`docker run --rm -ti -e ANDROID_BUILD_PRODUCT=android_x86-eng -e ANDROID_BUILD_JOBS=4 -e ANDROID_BUILD_UID=$(id -u) -e ANDROID_BUILD_TARGET=iso_img -v <path-to-source>:/source darrenclark/android-build-kitkat-x86`
 
 That will build run `lunch android_x86-eng` then `m -j4 iso_img`, with output being in `<path-to-source>/out` on the host.
 It will also create user with the specified user id and execute the build as that user. If this is not provided, it will execute as root.
