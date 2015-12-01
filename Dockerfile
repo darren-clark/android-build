@@ -20,6 +20,8 @@ run apt-get update && \
     zlib1g:i386 \ 
     libxml2-utils \
     squashfs-tools \
+    dosfstools \
+    mtools \
     python \
     bison \
     zip \
