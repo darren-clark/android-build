@@ -1,12 +1,3 @@
-from darrenclark/android-build-base
+from darrenclark/android-build-lollipop-x86
 
-#Lollipop-x86 reqs
-
-run apt-get update && \
-  apt-get install -y \
-    openjdk-7-jdk &&\
- rm -rf /var/lib/apt/lists/*
-
-add build /usr/local/bin/build
-cmd ["/usr/local/bin/build"]
 
