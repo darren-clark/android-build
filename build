@@ -5,6 +5,7 @@ if [[ $ANDROID_BUILD_UID ]] && [[ $ANDROID_BUILD_UID -ne $(id -u) ]]; then
   id -u android-build &> /dev/null || { groupadd -g ${ANDROID_BUILD_GID:-$ANDROID_BUILD_UID} android-build; useradd -d /source -u $ANDROID_BUILD_UID -g ${ANDROID_BUILD_GID:-$ANDROID_BUILD_UID} android-build; }  
   su -c build android-build 
 else
+ export USER=$(whoami)
  if [[  $ANDROID_BUILD_PRODUCT ]]; then source build/envsetup.sh; lunch $ANDROID_BUILD_PRODUCT; fi;
  m -j${ANDROID_BUILD_JOBS:-1} $ANDROID_BUILD_TARGET
 fi
