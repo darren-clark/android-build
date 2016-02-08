@@ -14,6 +14,4 @@ run apt-get update && \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk6-installer
 
-add build /usr/local/bin/build
-cmd ["/usr/local/bin/build"]
 
