@@ -7,6 +7,4 @@ run apt-get update && \
     openjdk-7-jdk &&\
  rm -rf /var/lib/apt/lists/*
 
-add build /usr/local/bin/build
-cmd ["/usr/local/bin/build"]
 
